@@ -25,6 +25,10 @@ resource "random_password" "password" {
   length = 8
 }
 
+resource "random_string" "string" {
+  length = 16
+}
+
 resource "null_resource" "hello" {
   provisioner "local-exec" {
     command = "echo hello ${random_pet.name.id}"
@@ -38,4 +42,8 @@ output "my_pet_name" {
 output "my_password" {
   sensitive = true
   value = random_password.password
+}
+
+output "my_string" {
+  value = random_string.string
 }
