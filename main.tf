@@ -21,6 +21,10 @@ provider "null" {
 resource "random_pet" "name" {
 }
 
+resource "random_password" "password" {
+  length = 8
+}
+
 resource "null_resource" "hello" {
   provisioner "local-exec" {
     command = "echo hello ${random_pet.name.id}"
@@ -29,4 +33,8 @@ resource "null_resource" "hello" {
 
 output "my_pet_name" {
   value = random_pet.name.id
+}
+
+output "my_password" {
+  value = random_password.password
 }
