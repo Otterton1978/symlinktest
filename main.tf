@@ -41,9 +41,9 @@ output "my_pet_name" {
 
 output "my_password" {
   sensitive = true
-  value = random_password.password
+  value = random_password.password.id
 }
 
 output "my_string" {
-  value = random_string.string
+  value = random_string.string.id
 }
