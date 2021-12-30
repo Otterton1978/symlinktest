@@ -36,6 +36,6 @@ output "my_pet_name" {
 }
 
 output "my_password" {
-  sensitive = false
+  sensitive = true
   value = random_password.password
 }
